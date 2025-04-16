@@ -1,5 +1,7 @@
 # react-native-secured-datetime
 
+[![CI](https://github.com/nicolastorre/react-native-secured-datetime/actions/workflows/ci.yml/badge.svg)](https://github.com/nicolastorre/react-native-secured-datetime/actions/workflows/ci.yml)
+
 Securely compute the current date and time using a trusted server datetime and the device's native monotonic clock (`elapsedRealtime`).
 
 This prevents cheating or manipulation of time by tampering with the system clock.
