@@ -8,6 +8,10 @@ This prevents cheating or manipulation of time by tampering with the system cloc
 
 ---
 
+<p align="center">
+  <img src="screenshot.png" alt="Aperçu de l'application mobile" width="300"/>
+</p>
+
 ## 🚀 Features
 
 - ✅ Returns a secure `Date` object based on a known server datetime and native uptime

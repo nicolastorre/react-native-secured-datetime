@@ -8,8 +8,6 @@ import {
 export default function App() {
   const [securedDateTime, setSecuredDateTime] = useState<Date | null>(null);
 
-  const elapsedRealTime = getElapsedRealtime();
-
   useEffect(() => {
     const init = async () => {
       try {
@@ -31,8 +29,19 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Elapsed real time: {elapsedRealTime}</Text>
-      <Text>Secured date time: {securedDateTime?.toISOString()}</Text>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>react-native-secured-datetime</Text>
+      </View>
+      <View style={styles.body}>
+        <View style={[styles.item, styles.wrongItem]}>
+          <Text style={styles.text}>Local datetime:</Text>
+          <Text style={styles.text}>{new Date().toISOString()}</Text>
+        </View>
+        <View style={[styles.item, styles.rightItem]}>
+          <Text style={styles.text}>Secured datetime:</Text>
+          <Text style={styles.text}>{securedDateTime?.toISOString()}</Text>
+        </View>
+      </View>
     </View>
   );
 }
@@ -42,5 +51,35 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  header: {
+    marginBottom: 20,
+  },
+  headerText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  body: {
+    marginBottom: 20,
+  },
+  item: {
+    padding: 5,
+    marginBottom: 10,
+    borderWidth: 5,
+    borderColor: 'gray',
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  wrongItem: {
+    borderColor: 'red',
+  },
+  rightItem: {
+    borderColor: 'green',
+  },
+  text: {
+    fontSize: 14,
+    fontWeight: 'bold',
   },
 });
