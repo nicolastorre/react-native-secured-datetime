@@ -17,7 +17,7 @@ export const getSecuredDateTime = (
 ): Date => {
   const newElapsedRealtime = getElapsedRealtime();
   const serverDate = new Date(serverDateTime);
-  if (!serverDate) {
+  if (isNaN(serverDate.getTime())) {
     throw new Error('server date error');
   }
   const deltaSeconds = newElapsedRealtime - oldElapsedRealtime;
